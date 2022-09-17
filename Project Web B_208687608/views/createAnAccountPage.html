@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/pagesCSS.css">
+    <script defer src="../static/javaScript.js"></script>    
+
+    <title>Hi-Paw</title>
+</head>
+<body>
+    <div class="container">
+        <div class="myHeader">
+            <h1>Hi-Paw</h1>
+            <div class="HeaderDiv"></div>
+        </div>
+        <div class="divLogo">
+            <a href="./homePage.html">
+                <img src="../Images/LogoImg.png" alt=""width="150" height="150">
+             </a>
+             <nav>
+                <ul>
+                    <li><a href="./homePage.html">Log In</a></li>
+                    <li><a href="./createAnAccountPage.html">Sign Up</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="divLeft">
+                <form name="myForm"  method="post" action="#" onsubmit="return validateForm();">
+                    <h2>Create an Account</h2>
+                    <h4> >> Tell us about yourself!</h4>            
+                    <label for="UserEmail">Email</label>
+                    <input type="email" id="UserEmail" name="UserEmail" placeholder="Your email.." required><br>
+
+                    <label for="UserFName">First Name</label>
+                    <input type="text" id="UserFName" name="UserFName" pattern="[a-zA-Z]+" title="Must contain only letters" placeholder="Your first name.." required><br>
+
+                    <label for="UserLName">Last Name</label>
+                    <input type="text" id="UserLName" name="UserLName" pattern="[a-zA-Z]+" title="Must contain only letters" placeholder="Your last name.." required><br>
+
+                    <label for="UserPNum">Phone Number</label>
+                    <input type="tel" id="UserLName" name="UserPNum" pattern="[0-9]{3}-[0-9]{7}" placeholder="Your phone number.." required><br>
+
+                    <label for="UserDOB">Date of Birth</label>
+                    <input type="date" id="UserDOB" name="UserDOB" placeholder="Your date of birth.." required><br>
+
+                    <label for="UserGender">Gender</label>
+                    <select id="Gender" name="Gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                        </select><br>
+
+                    <h4> >> Tell us about your dog!</h4>      
+                     <label for="DogsName">Dog's Name</label>
+                     <input type="text" id="DogsName" name="DogsName" pattern="[a-zA-Z]+" title="Must contain only letters" placeholder="Your Dog's name.." required><br>
+
+                     <label for="DogsBreed">Dog's Breed</label>
+                     <input type="text" id="DogsBreed" name="DogsBreed" pattern="[a-zA-Z]+" title="Must contain only letters" placeholder="Your Dog's breed.." required><br>
+    
+                     <label for="DogsGender">Dog's Gender</label>
+                     <select id="Gender" name="Gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        </select><br>
+
+                     <label for="DogsAge">Dog's Age</label>
+                     <input type="number" id="DogsAge" name="DogsAge" placeholder="Your Dog's age.." required><br>
+
+                     <label for="DogsVacc">Vaccinated?</label>
+                     <input type="checkbox" id="DogsVacc" name="DogsVacc" required><br>
+
+                     <label for="DogsNeu">Neutering?</label>
+                     <input type="checkbox" id="DogsNeu" name="DogsNeu" required><br>
+
+                     <h4> >> Please create a password</h4>      
+
+                    <label for="UserPassword">Password</label>
+                    <input type="password" id="lname" name="UserPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="Your password.." required><br>
+
+                    <input name="GoButton" type="submit" value="Create" id="GoButton">
+  
+                </form>
+            </div>
+
+        <div class="divRight">
+            <img class= "image3" src="../Images/CreateAccountImg-removebg-preview.png" alt="">
+        </div>
+        <div class="divEmpty"></div>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+@font-face {
+    font-family: myFont;
+    src: url(./Montserrat-Regular.ttf);
+}
+
+:root {
+    --myBeige: #FFF9F0;
+    --myBrown: #48392E;
+    --myBeigeDark: #D8C8AD;
+    --myHamra: #994c09;
+    --myGreen: #B8D8BE;
+}
+
+body {
+    
+    font-family: myFont;
+    padding: 5px;
+    margin: 1% 1% 1% 1%;
+    font-size: 20px;
+    background-color: var(--myBeige);
+    color: var(--myBrown);
+}
+
+ul li {
+    display: inline;
+}
+
+.Active {
+    font-weight: bold;
+    background-color: var(--myGreen);
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    'logo header header header header'
+    'empty form pic pic pic'
+    'empty newAcLabel pic pic pic';
+}
+
+.container1 {
+    display: grid;
+    grid-template-areas: 
+    'logo header header header header'
+    'form form pic1 pic1 pic1'
+    'form form pic1 pic1 pic1';
+}
+
+.myHeader {
+    font-weight: bold;
+    grid-area: header;
+    height: 25vh;
+    margin-top: 100px;
+
+}
+
+.divLogo{
+    grid-area: logo;
+    height: 25vh;
+    display: flex;
+    float: left;
+
+}
+
+.divLogo img{
+    display: inline;
+
+}
+
+.divLeft {
+    grid-area: form;
+    height: 50vh;
+    width: 320px;
+    padding: 0px;
+    margin-bottom: 20px;
+    margin-right: 50px; 
+    margin-top:-10px;
+}
+
+::placeholder{
+    color: var(--myBeige);
+
+}
+
+.divLeft label {
+font-size: smaller;
+
+}
+
+.divRight {
+    grid-area: pic;
+    height: 25vh;
+    margin-left: 230px;
+    width: 400px;
+    height:400px;
+    margin-top: -80px;
+}
+
+.divRight1 {
+    grid-area: pic1;
+    height: 25vh;
+    margin-left: 0px;
+    margin-top: -570px;
+}
+
+.divEmpty{
+    grid-area: empty;
+}
+
+.divNewAccountLink{
+    grid-area: newAcLabel;
+    animation-name: size;
+    animation: size 2s 2s  ease-in-out;
+}
+
+#GoButton {
+    background-color: var(--myBrown); /* Browm */
+    border: none;
+    color: var(--myBeige);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+.divLeft input{
+    margin: 10px 0px 10px 0px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 20px;
+    border-color: var(--myBeigeDark);
+    background-color: var(--myBeigeDark);
+}
+
+
+.divLeft input[type="checkbox"] {
+    accent-color: var(--myBrown);
+    width: 18px;
+    height: 18px;
+}
+
+.divLeft input[type="range"] {
+    accent-color: var(--myBrown); 
+}
+
+#textInput{
+    display: inline;
+}
+
+.divLeft table{
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-left: -100px;
+}
+
+.divLeft table th{
+margin: 10px 10px 10px 10px;
+padding-top: 12px;
+padding-bottom: 12px;
+padding-right: 25px;
+padding-left: 25px;
+text-align: left;
+background-color: var(--myHamra);
+color: white;
+}
+
+@media screen and (max-width: 700px) {
+    body{
+        background-color: var(--myGreen) ;
+    }
+    .container {
+        display: grid;
+        grid-template-areas: 
+        'logo'
+        'header' 
+        'form'
+        'newAcLabel'
+        'empty';
+    }
+    .divRight .image3 {
+        display: none;
+    }
+    .divRight{
+        display: none;
+    }
+    .divLeft, .myHeader{
+        margin-left: 20%;
+    }
+    .divLeft{
+        margin-top: 0px;
+    }
+    .container1 {
+        display: grid;
+        grid-template-areas: 
+        'logo'
+        'header' 
+        'form'
+        'newAcLabel'
+        'empty';
+    }
+    .divRight1{
+        display: none;
+    }
+    .divLeft, .myHeader{
+        margin-left: 20%;
+    }
+    .divLeft{
+        margin-top: 0px;
+    }
+
+ }
+
+ @keyframes size  {
+    0% {font-size: 20px;}
+    50% {font-size: 25px;}
+    100% {font-size: 20px;}
+    
+ }
+
+
+
+

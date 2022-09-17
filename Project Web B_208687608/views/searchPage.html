@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/pagesCSS.css">
+    <script defer src="../static/javaScript.js"></script>    
+    <title>Hi-Paw</title>
+</head>
+<body>
+    <div class="container">
+        <div class="myHeader">
+            <h1>Hi-Paw</h1>
+            <div class="HeaderDiv"></div>
+        </div>
+        <div class="divLogo">
+            <a href="./homePage.html">
+                <img src="../Images/LogoImg.png" alt=""width="150" height="150">
+             </a>
+             <nav>
+                <ul>
+                    <li><a href="./homePage.html">Log In</a></li>
+                    <li><a href="./createAnAccountPage.html">Sign Up</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="divLeft">
+                <form action="" method="">
+                    <h2>Search Dogs</h2>      
+                    <label for="dogsAgeRange">Dog's Age Range</label>
+                    <input type="range" min="0" max="18" value="5" id="dogsAgeRange" name="dogsAgeRange" onchange="updateTextInput(this.value);" >
+                    <input type="text" id="textInput" value=""><br>
+
+                    <label for="DogsVacci">Dog's Vaccinated</label>
+                    <input type="checkbox" id="DogsVacci" name="DogsVacci"><br>
+
+                    <label for="DogsNeut">Dog's Neutering</label>
+                    <input type="checkbox" id="DogsNeut" name="DogsNeut" ><br>
+
+                    <input name="GoButton" type="submit" value="Search" id="GoButton">
+  
+                </form>
+            </div>
+
+        <div class="divRight">
+            <img class= "image3" src="../Images/MenuImg.png" alt="">
+        </div>
+        <div class="divEmpty"></div>
+    </div>
+</body>
+</html>
