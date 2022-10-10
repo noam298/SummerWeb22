@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='pagesCSS.css')
+    script(defer='', src='javaScript.js')
+    title Hi-Paw
+  body
+    .container
+      .myHeader
+        h1 Hi-Paw
+        .HeaderDiv
+      .divLogo
+        a(href='//localhost:8080')
+          img(src='../Images/LogoImg.png', alt='', width='150', height='150')
+        nav
+          ul
+            li
+              a(href='//localhost:8080') Log In
+            li
+              a(href='//localhost:8080/userCreation') Sign Up
+      .divLeft
+        form(action='/NewEntry', method='post')
+          h2 Sign-In
+          label(for='UserEmail') Email
+          input#UserEmail(type='email', name='UserEmail', placeholder='Your email..', required='')
+          br
+          label(for='UserPassword') Password
+          input#lname(type='password', name='UserPassword', placeholder='Your password..', required='')
+          br
+          input#GoButton(name='GoButton', type='submit', value='Enter')
+      .divRight
+        img.image3(src='../Images/HomePageImage.png', alt='')
+      .divEmpty
+      .divNewAccountLink
+        label.First2(for='NewAccount')
+          | Still don&apos;t have an accocunt? Tap 
+          a(href='//localhost:8080/userCreation') Here

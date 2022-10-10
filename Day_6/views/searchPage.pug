@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='pagesCSS.css')
+    script(defer='', src='javaScript.js')
+    title Hi-Paw
+  body
+    .container
+      .myHeader
+        h1 Hi-Paw
+        .HeaderDiv
+      .divLogo
+        a(href='//localhost:8080')
+          img(src='./Images/LogoImg.png', alt='', width='150', height='150')
+        nav
+          ul
+            li
+              a(href='//localhost:8080') Log In
+            li
+              a(href='//localhost:8080/userCreation') Sign Up
+      .divLeft
+        form(action='/searchRes', method='post')
+          h2 Search Dogs
+          label(for='dogsAgeRange') Dog&apos;s Age Range
+          input#dogsAgeRange(type='range', min='0', max='18', value='0', name='dogsAgeRange', onchange='updateTextInput(this.value);')
+          input#textInput(type='text', value='')
+          br
+          label(for='DistanceRange') Distance Range
+          select#DistanceRange(name='DistanceRange')
+            option(value='0-10') 0-10 km
+            option(value='10-20') 10-20 km
+            option(value='20+') 20+ km
+          br
+          label(for='DogsVacci') Dog&apos;s Vaccinated
+          input#DogsVacci(type='checkbox', name='DogsVacci', onchange= 'SearchGetLocation();')
+          br
+          label(for='DogsNeut') Dog&apos;s Neutering
+          input#DogsNeut(type='checkbox', name='DogsNeut')
+          br
+          label(for='searchLatitude')
+          input#searchLatitude(type='text', name='searchLatitude', required='')
+          br
+          label(for='searchLongitude')
+          input#searchLongitude(type='text', name='searchLongitude', required='')
+          br
+          input#GoButton(name='GoButton', type='submit', value='Search')
+      .divRight
+        img.image3(src='./Images/MenuImg.png', alt='')
+      .divEmpty

@@ -1,0 +1,83 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='pagesCSS.css')
+    script(defer='', src='javaScript.js')
+    title Hi-Paw
+  body 
+    .container
+      .myHeader
+        h1 Hi-Paw
+        .HeaderDiv
+      .divLogo
+        a(href='//localhost:8080')
+          img(src='../Images/LogoImg.png', alt='', width='150', height='150')
+        nav
+           ul
+            li
+              a(href='//localhost:8080') Log In
+            li
+              a(href='//localhost:8080/userCreation') Sign Up
+      .divLeft
+        form(name='myForm', method='post', action='/insertUser', onsubmit= 'GetLocation();')
+          h2 Create an Account
+          h4  &gt;&gt; Tell us about yourself!
+          label(for='UserEmail') Email
+          input#UserEmail(type='email', name='UserEmail', placeholder='Your email..', required='', onchange = 'dateValid ();')
+          br
+          label(for='UserFName') First Name
+          input#UserFName(type='text', name='UserFName', pattern='[a-zA-Z]+', title='Must contain only letters', placeholder='Your first name..', required='', onchange= 'GetLocation();')
+          br
+          label(for='UserLName') Last Name
+          input#UserLName(type='text', name='UserLName', pattern='[a-zA-Z]+', title='Must contain only letters', placeholder='Your last name..', required='')
+          br
+          label(for='UserPNum') Phone Number
+          input#UserLName(type='tel', name='UserPNum', pattern='[0-9]{3}-[0-9]{7}', placeholder='05x-xxxxxxx', required='')
+          br
+          label(for='UserDOB') Date of Birth
+          input#UserDOB(type='date', name='UserDOB', placeholder='Your date of birth..', required='', max = 'dateValidation ();' )
+          br
+          label(for='UserGender') Gender
+          select#UserGender(name='UserGender')
+            option(value='Male') Male
+            option(value='Female') Female
+            option(value='Other') Other
+          br
+          h4  &gt;&gt; Tell us about your dog!
+          label(for='DogsName') Dog&apos;s Name
+          input#DogsName(type='text', name='DogsName', pattern='[a-zA-Z]+', title='Must contain only letters', placeholder="Your Dog's name..", required='')
+          br
+          label(for='DogsBreed') Dog&apos;s Breed
+          input#DogsBreed(type='text', name='DogsBreed', pattern='[a-zA-Z]+', title='Must contain only letters', placeholder="Your Dog's breed..", required='')
+          br
+          label(for='DogsGender') Dog&apos;s Gender
+          select#DogsGender(name='DogsGender')
+            option(value='Male') Male
+            option(value='Female') Female
+          br
+          label(for='DogsAge') Dog&apos;s Age
+          input#DogsAge(type='number', name='DogsAge', placeholder="Your Dog's age..", required='', min = 0)
+          br
+          label(for='DogsVacc') Vaccinated?
+          input#DogsVacc(type='checkbox', name='DogsVacc')
+          br
+          label(for='DogsNeu') Neutering?
+          input#DogsNeu(type='checkbox', name='DogsNeu')
+          br
+          h4  &gt;&gt; Please create a password
+          label(for='UserPassword') Password
+          input#lname(type='password', name='UserPassword', pattern='(?=.*[a-z])(?=.*[A-Z]).{4,}', title='Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters', placeholder='Your password..', required='')
+          br
+          label(for='userLatitude')
+          input#userLatitude(type='text', name='userLatitude', required='')
+          br
+          label(for='userLongitude')
+          input#userLongitude(type='text', name='userLongitude', required='')
+          br
+          input#GoButton(name='GoButton', type='submit', value='Create')
+      .divRight
+        img.image3(src='../Images/CreateAccountImg-removebg-preview.png', alt='')
+      .divEmpty

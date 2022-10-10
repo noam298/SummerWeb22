@@ -1,0 +1,93 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='pagesCSS.css')
+    script(defer='', src='javaScript.js')
+    title Hi-Paw
+  body
+    .container
+      .myHeader
+        h1 Hi-Paw
+        .HeaderDiv
+      .divLogo
+        a(href='//localhost:8080')
+          img(src='./Images/LogoImg.png', alt='', width='150', height='150')
+        nav
+          ul
+            li
+              a(href='//localhost:8080') Log In
+            li
+              a(href='//localhost:8080/userCreation') Sign Up
+      .divLeft
+        h3 Who let the dogs out?
+        table
+          tbody 
+            tr
+                th id
+                th First Name
+                th Last Name
+                th Phone Number
+                th Date of Birth
+                th Gender
+                th Dogs Name
+                th Breed
+                th Dogs Gender
+                th Dogs Age
+                th Vaccinated?
+                th Neuturing?
+
+            each n in pple
+                tr
+                td= n.id 
+                td= n.userFname
+                td= n.userLname
+                td= n.phoneNum 
+                td= n.dateOB
+                td= n.userGender 
+                td= n.dogsName 
+                td= n.breed
+                td= n.dogsGender 
+                td= n.dogsAge 
+                td= n.vacc
+                td= n.neut  
+        //- table(action='', method='')
+        //-   tbody
+        //-     tr
+        //-       th First Name
+        //-       th Last Name
+        //-       th Gender
+        //-       th Dog&apos;s Name
+        //-       th Dog&apos;s Breed
+        //-       th Dog&apos;s Age
+        //-       th Dog&apos;s Gender
+        //-     tr
+        //-       td Nir
+        //-       td Shani
+        //-       td Male
+        //-       td Jason
+        //-       td Labrador
+        //-       td 6
+        //-       td Male
+        //-     tr
+        //-       td Maya
+        //-       td Musan Levi
+        //-       td Female
+        //-       td Vini
+        //-       td Pomerenian
+        //-       td 3
+        //-       td Male
+        //-     tr
+        //-       td Dina
+        //-       td Yaniv
+        //-       td Female
+        //-       td Nona
+        //-       td German Shepherd
+        //-       td 1
+        //-       td Female
+
+      .divRight1
+        img(src='./Images/ResultImg.png', alt='', width='250', height='250')
+      .divEmpty

@@ -1,0 +1,19 @@
+{
+  "name": "day_6",
+  "version": "1.0.0",
+  "description": "this is the DB in WEB course",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2"
+  }
+}
