@@ -16,6 +16,7 @@ function GetLocation() {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
         document.getElementById("p").innerHTML = "Geolocation is not supported";
+        //test
     }
 };
 
