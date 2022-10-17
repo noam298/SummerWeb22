@@ -18,7 +18,9 @@ html(lang='en')
         nav
           ul
             li
-              a(href='//localhost:8080') Log In
+              a(href='//localhost:8080/homePage') Home Page
+            li
+              a(href='//localhost:8080') Sign In
             li
               a(href='//localhost:8080/userCreation') Sign Up
       .divLeft
@@ -26,7 +28,6 @@ html(lang='en')
         table
           tbody 
             tr
-                th id
                 th First Name
                 th Last Name
                 th Phone Number
@@ -41,7 +42,6 @@ html(lang='en')
 
             each n in pple
                 tr
-                td= n.id 
                 td= n.userFname
                 td= n.userLname
                 td= n.phoneNum 

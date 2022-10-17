@@ -18,27 +18,32 @@ html(lang='en')
         nav
           ul
             li
-              a(href='//localhost:8080') Log In
+              a(href='//localhost:8080/homePage') Home Page
+            li
+              a(href='//localhost:8080') Sign In
             li
               a(href='//localhost:8080/userCreation') Sign Up
       .divLeft
         form(action='/searchRes', method='post')
           h2 Search Dogs
-          label(for='dogsAgeRange') Dog&apos;s Age Range
-          input#dogsAgeRange(type='range', min='0', max='18', value='0', name='dogsAgeRange', onchange='updateTextInput(this.value);')
+          label(for='withoutFilters') Search without filters
+          input#withoutFilters(type='checkbox', name='withoutFilters', onchange="return noFiltersHide(document.getElementById('withoutFilters').value);" onclick="SearchGetLocation();")
+          br
+          label#LabelDogsAgeRange(for='dogsAgeRange') Dog&apos;s Age Range
+          input#dogsAgeRange(type='range', min='0', max='18', value='0', name='dogsAgeRange', onchange='updateTextInput(this.value);', onclick= 'SearchGetLocation();')
           input#textInput(type='text', value='')
           br
-          label(for='DistanceRange') Distance Range
-          select#DistanceRange(name='DistanceRange')
-            option(value='0-10') 0-10 km
-            option(value='10-20') 10-20 km
-            option(value='20+') 20+ km
+          label#LabelDistanceRange(for='DistanceRange') Distance Range
+          select#DistanceRange(name='DistanceRange', onclick= 'SearchGetLocation();')
+            option(value='10') 0-10 km
+            option(value='20') 10-20 km
+            option(value='1000000') 20+ km
           br
-          label(for='DogsVacci') Dog&apos;s Vaccinated
+          label#LabelDogsVacci(for='DogsVacci') Dog&apos;s Vaccinated
           input#DogsVacci(type='checkbox', name='DogsVacci', onchange= 'SearchGetLocation();')
           br
-          label(for='DogsNeut') Dog&apos;s Neutering
-          input#DogsNeut(type='checkbox', name='DogsNeut')
+          label#LabelDogsNeut(for='DogsNeut') Dog&apos;s Neutering
+          input#DogsNeut(type='checkbox', name='DogsNeut', onchange= 'SearchGetLocation();')
           br
           label(for='searchLatitude')
           input#searchLatitude(type='text', name='searchLatitude', required='')

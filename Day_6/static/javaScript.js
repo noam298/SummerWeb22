@@ -16,7 +16,7 @@ function GetLocation() {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
         document.getElementById("p").innerHTML = "Geolocation is not supported";
-        //test
+        
     }
 };
 
@@ -82,4 +82,30 @@ function dateValidation (){
     today = yyyy + '-' + mm + '-' + dd;
     console.log(today);
     return today;
+};
+
+function noFiltersHide(noFilters){
+    console.log("no filterssssssss");
+    if(noFilters){
+        document.getElementById('dogsAgeRange').style.visibility='hidden';
+        document.getElementById('textInput').style.visibility='hidden';
+        document.getElementById('DistanceRange').style.visibility='hidden';
+        document.getElementById('DogsVacci').style.visibility='hidden';
+        document.getElementById('DogsNeut').style.visibility='hidden';
+        document.getElementById('LabelDogsAgeRange').style.visibility='hidden';
+        document.getElementById('LabelDistanceRange').style.visibility='hidden';
+        document.getElementById('LabelDogsVacci').style.visibility='hidden';
+        document.getElementById('LabelDogsNeut').style.visibility='hidden';
+}
+    if(!noFilters){
+        document.getElementById('dogsAgeRange').style.visibility='visible';
+        document.getElementById('textInput').style.visibility='visible';
+        document.getElementById('DistanceRange').style.visibility='visible';
+        document.getElementById('DogsVacci').style.visibility='visible';
+        document.getElementById('DogsNeut').style.visibility='visible';
+        document.getElementById('LabelDogsAgeRange').style.visibility='visible';
+        document.getElementById('LabelDistanceRange').style.visibility='visible';
+        document.getElementById('LabelDogsVacci').style.visibility='visible';
+        document.getElementById('LabelDogsNeut').style.visibility='visible  ';
+    }
 };

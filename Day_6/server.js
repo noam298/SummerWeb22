@@ -38,6 +38,10 @@ app.get("/userCreation", (req, res) => {
     res.render("createAnAccount");
 });
 
+app.get("/homePage", (req, res) => {
+    res.render("welcomePage");
+});
+
 /*
 app.get('/users', (req, res)=>{
     sql.query("SELECT * FROM users", (err, mysqlre)=>{

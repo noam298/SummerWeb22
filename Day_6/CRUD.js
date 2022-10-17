@@ -47,7 +47,10 @@ const ShowAllUsers = (req,res)=>{
         }
         console.log("success... ");
         
-        res.send(mysqlres);
+        res.render('resultsPage', {
+            // var1:"All stuednt table",
+            pple: mysqlres
+        });
         return;
     });
 };
@@ -72,7 +75,9 @@ const SearchUser = (req,res)=>{
                 return;
             }
             if (mysqlres.length == 0){
-                res.render('fail');
+                const message1 = "One or more fields are incorrect.";
+                const message2 = "Please try again.";
+                res.render('fail', {failMessage1: message1, failMessage2: message2});
                 return;
             }
             console.log("success... ");
@@ -83,10 +88,16 @@ const SearchUser = (req,res)=>{
 };
 
 const userSearchRes = (req,res)=>{
+    var noFilters = Boolean(req.body.noFilters);
     var age = req.body.dogsAgeRange;
     var distance = req.body.DistanceRange;
     var vacci = Boolean(req.body.DogsVacci);
     var neut = Boolean(req.body.DogsNeut);
+    var sLatitude = req.body.searchLatitude;
+    var sLongitude = req.body.searchLongitude;
+    console.log("my no filters " + noFilters);
+    var noFiltersRes;
+    // console.log("my no age " + age);
 
     if (!vacci) {
         vacci=0;
@@ -96,26 +107,50 @@ const userSearchRes = (req,res)=>{
         neut=0;
     }
 
-    const Q3 = "SELECT * FROM users WHERE (dogsAge>=? AND vacc = ? AND neut=?)";
-    sql.query(Q3, [age,vacci,neut],(err, mysqlres)=>{
+    if (!noFilters) {
+        console.log("im here without filters");
+        const Q5 = "SELECT * FROM users";
+        sql.query(Q5, (err, mysqlres)=>{
             if (err) {
                 console.log("error in getting all users " + err);
-                res.status(400).send({message:"error in getting all users " + err});
+                res.status(400).send({message:"error in getting all users " + err})
                 return;
             }
-            if (mysqlres.length == 0){
-                res.render('fail');
-                return;
-            }
-            console.log("success!!! ");
+            else{
+            console.log("success... ");
+            
             res.render('resultsPage', {
-                // var1:"All stuednt table",
                 pple: mysqlres
             });
-            // res.send(mysqlres);
             return;
+            }
         });
-
-};
+        return;
+    }
+    else if (noFilters) {
+        console.log("why here???");
+    
+        const Q4 = "SELECT * FROM users WHERE (dogsAge>=?) AND (vacc = ?) AND (neut=?) AND (SQRT(POW(69.1*(latitude - ?),2) + POW(69.1*(? - longitude)*COS(latitude/57.3),2))<?) ";
+        sql.query(Q4, [age,vacci,neut,sLatitude,sLongitude,distance],(err, mysqlres)=>{
+                if (err) {
+                    console.log("error in getting all users " + err);
+                    res.status(400).send({message:"error in getting all users " + err});
+                    return;
+                }
+                if (mysqlres.length == 0){
+                    const message1 = "There is no dogs that match your filters";
+                    const message2 = "Please try to expend the search";
+                    res.render('fail', {failMessage1: message1, failMessage2: message2});
+                    return;
+                }
+                console.log("success!!! ");
+                res.render('resultsPage', {
+                    // var1:"All stuednt table",
+                    pple: mysqlres
+                });
+                // res.send(mysqlres);
+                return;
+            });    
+    }};   
 
 module.exports = {InsertUser, ShowAllUsers,SearchUser, userSearchRes }

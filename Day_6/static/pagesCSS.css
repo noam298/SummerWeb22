@@ -24,6 +24,9 @@ body {
 
 ul li {
     display: inline;
+    font-size: 13px;
+    padding-right: 5px;
+
 }
 
 .Active {
@@ -149,7 +152,7 @@ font-size: smaller;
     display: inline;
 }
 
-.divLeft table{
+/* .divLeft table{
     border: 1px solid #ddd;
     padding: 10px;
     margin-left: -400px;
@@ -164,6 +167,53 @@ padding-left: 25px;
 text-align: left;
 background-color: var(--myHamra);
 color: white;
+} */
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    /* margin-right: 20%; */
+    margin-left: -200px;
+ }
+ tr:first-child {
+  position: sticky;
+  top: 0;
+ }
+ td{
+    font-size: 20px;
+    background-color: var(--myBeigeDark);
+    text-align: center;
+    padding: 6px;
+    border-bottom: 1px solid var(--myBlack);
+    margin: 20px;
+ }
+thead{
+  position: sticky;
+  top: 0;
+}
+th{
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    background-color: var(--myHamra);
+    margin: 5px 0px 5px 0px;
+    padding: 8px;
+    border-bottom: 1px solid var(--myBlack);
+ }
+ tr:hover {background-color: var(--myBeigeDark);}
+ .header4 .image2{
+    width: 45px;
+    align-items:center;
+ }
+
+.divLeft select{
+    background-color: var(--myBeige);
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
 }
 
 /* #userLongitude, #userLatitude{
