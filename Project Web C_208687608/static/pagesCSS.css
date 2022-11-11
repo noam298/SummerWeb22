@@ -216,9 +216,9 @@ th{
     border-radius: 12px;
 }
 
-/* #userLongitude, #userLatitude{
+#userLongitude, #userLatitude, #searchLatitude, #searchLongitude{
     visibility: hidden;
-} */
+}
 
 @media screen and (max-width: 700px) {
     body{

@@ -4,7 +4,7 @@ const path = require('path');
 const port = 8080;
 const sql = require('./db');
 const CRUD = require('./CRUD');
-
+const CreateDB=require('./DBCreateData');
 
 //SetUp
 const app = express();
@@ -14,13 +14,17 @@ app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended: true}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.use(express.static('static'));
+app.use(express.static('static'));  
 
-app.get('/', (req, res)=>{
-    
+const start=function(req,res){
     res.render('homePage');
-   // res.send("hi mysql + pug");
-});
+};
+
+app.get('/',[CreateDB.DropUsersTable,CreateDB.CreateUsers, CreateDB.InsertDataToUsers,start]);
+
+app.get('/signIn', (req,res)=>{
+    res.render('homePage');
+})
 
 app.post('/insertUser',CRUD.InsertUser);
 

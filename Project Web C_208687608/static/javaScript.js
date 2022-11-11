@@ -1,8 +1,8 @@
-const ActivePage = window.location.pathname;
+const ActivePage = window.location.href;
 
 const activeNav = document.querySelectorAll('nav a').forEach(
     MyLinks => {
-        if (MyLinks.href.includes(`${ActivePage}`)) {
+        if (MyLinks.href==ActivePage) {
             MyLinks.classList.add('Active');
         }
     }
@@ -84,9 +84,9 @@ function dateValidation (){
     return today;
 };
 
-function noFiltersHide(noFilters){
-    console.log("no filterssssssss");
-    if(noFilters){
+function noFiltersHide(noFiltersResult){
+    console.log("hiiiiiiiiiiiiiiiiiiii");
+    if(noFiltersResult){
         document.getElementById('dogsAgeRange').style.visibility='hidden';
         document.getElementById('textInput').style.visibility='hidden';
         document.getElementById('DistanceRange').style.visibility='hidden';
@@ -97,7 +97,7 @@ function noFiltersHide(noFilters){
         document.getElementById('LabelDogsVacci').style.visibility='hidden';
         document.getElementById('LabelDogsNeut').style.visibility='hidden';
 }
-    if(!noFilters){
+    else{
         document.getElementById('dogsAgeRange').style.visibility='visible';
         document.getElementById('textInput').style.visibility='visible';
         document.getElementById('DistanceRange').style.visibility='visible';

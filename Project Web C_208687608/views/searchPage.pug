@@ -18,16 +18,14 @@ html(lang='en')
         nav
           ul
             li
-              a(href='//localhost:8080/homePage') Home Page
+              a(href='//localhost:8080/homePage') About Us
             li
-              a(href='//localhost:8080') Sign In
+              a(href='//localhost:8080/signIn') Sign In
             li
               a(href='//localhost:8080/userCreation') Sign Up
       .divLeft
         form(action='/searchRes', method='post')
           h2 Search Dogs
-          label(for='withoutFilters') Search without filters
-          input#withoutFilters(type='checkbox', name='withoutFilters', onchange="return noFiltersHide(document.getElementById('withoutFilters').value);" onclick="SearchGetLocation();")
           br
           label#LabelDogsAgeRange(for='dogsAgeRange') Dog&apos;s Age Range
           input#dogsAgeRange(type='range', min='0', max='18', value='0', name='dogsAgeRange', onchange='updateTextInput(this.value);', onclick= 'SearchGetLocation();')
@@ -45,11 +43,14 @@ html(lang='en')
           label#LabelDogsNeut(for='DogsNeut') Dog&apos;s Neutering
           input#DogsNeut(type='checkbox', name='DogsNeut', onchange= 'SearchGetLocation();')
           br
+          label#all(for='all') Search without filters
+          input#all(type='checkbox', name='all', onchange="return noFiltersHide(document.getElementById('all').value)")
+          br
           label(for='searchLatitude')
-          input#searchLatitude(type='text', name='searchLatitude', required='')
+          input#searchLatitude(type='text', name='searchLatitude')
           br
           label(for='searchLongitude')
-          input#searchLongitude(type='text', name='searchLongitude', required='')
+          input#searchLongitude(type='text', name='searchLongitude')
           br
           input#GoButton(name='GoButton', type='submit', value='Search')
       .divRight

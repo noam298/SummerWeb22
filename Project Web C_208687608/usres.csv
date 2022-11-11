@@ -1,0 +1,10 @@
+ id , email                 , userFname , userLname  , phoneNum    , dateOB     , userGender , dogsName , breed            , dogsGender , dogsAge , vacc       , neut       , userPassword , latitude , longitude 
+1, nirshani@gmail.com    , Nir       , Shani      , 050-7200157 , 1969-12-04 , Male       , Jason    , Labrador         , Male       ,6,Yes,Yes, nir412       ,31.787,34.7176
+2, mayaml@gmail.com      , Maya      , Musan Levi , 050-3246755 , 1997-07-30 , Female     , Vini     , Pomerenian       , Male       ,3,Yes,No, maya30797    ,32.0089,34.7685
+3, dinaYaniv@gmail.com   , Dina      , Yaniv      , 052-2173233 , 2000-03-04 , Female     , Nona     , German Shephered , Female     ,1,No,No, dinaNona     ,29.5577,34.9519
+4, talipridan@gmail.com  , tali      , pridan     , 052-5322532 , 1989-10-12 , Female     , simba    , shitsoo          , Male       ,2,Yes,Yes, Tali12       ,32.0795,34.7851
+5, noamshvarts@gmail.com , noam      , shvarts    , 050-7200157 , 1997-08-29 , Female     , Motzart  , Boxer            , Male       ,2,Yes,Yes, Noam298      ,31.7871,34.7176
+6, uri@gmail.com         , uri       , jjj        , 050-7200159 , 2022-10-04 , Female     , kiki     , Boxer            , Female     ,5,Yes,No, kikikIki2004 ,32.0009,34.9534
+7, shirlh@gmail.com      , shir      , laham      , 050-5489683 , 1984-07-10 , Female     , lali     , poodel           , Female     ,2,Yes,No, Shirus41     ,31.7871,34.7175
+8, mayaH@gmail.com       , Maya      , Hammer     , 050-9877964 , 2003-06-26 , Female     , leo      , pincher          , Male       ,1,No,Yes, maYush45     ,32.0494,34.8357
+9, mayaH@gmail.com       , Maya      , Hammer     , 050-9877964 , 2003-06-26 , Female     , leo      , pincher          , Male       ,1,No,Yes, maYush45     ,32.0494,34.8357
