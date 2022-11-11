@@ -24,7 +24,6 @@ const InsertDataToUsers = (req,res,next)=>{
     csv()
     .fromFile(csvFilePath)
     .then((jsonObj)=>{
-    // console.log(jsonObj);
     jsonObj.forEach(element => {
         var NewEntry = {
             "id": element.id,

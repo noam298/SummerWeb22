@@ -41,7 +41,6 @@ const InsertUser = (req,res)=>{
         }
         console.log("created new user succesfully "+ mysqlres);
         res.render('homePage')
-        // res.send({message:"created new  succesfully "+ mysqlres});
         return;
     });
 };
@@ -57,7 +56,6 @@ const ShowAllUsers = (req,res)=>{
         console.log("success... ");
         
         res.render('resultsPage', {
-            // var1:"All stuednt table",
             pple: mysqlres
         });
         return;
@@ -73,8 +71,7 @@ const SearchUser = (req,res)=>{
     }
     const uEmail = req.body.UserEmail;
     const uPassword = req.body.UserPassword;
-    // console.log(uEmail);
-    // console.log(uPassword);
+
 
     const Q3 = "SELECT * FROM users WHERE (email=? AND userPassword = ?)";
     sql.query(Q3, [uEmail,uPassword],(err, mysqlres)=>{
@@ -97,7 +94,6 @@ const SearchUser = (req,res)=>{
 };
 
 const userSearchRes = (req,res)=>{
-    // var noFilters = Boolean(req.body.noFilters);
     var noFiltersTry = Boolean(req.body.all);
     console.log("no filterssssss:" + noFiltersTry);
     if (noFiltersTry) {
@@ -155,52 +151,9 @@ const userSearchRes = (req,res)=>{
             res.render('resultsPage', {
                 pple: mysqlres
             });
-            // res.send(mysqlres);
             return;
         });    
     };
 
-    // const userUpdate = (req, res)=>{
-    //     if (!req.body) {
-    //         res.status(400).send({
-    //             message: "content cannot be empty"
-    //         });
-    //         return;
-    //     }
-    //     var UpdateCustomer = {
-    //         "email" : req.body.UserEmail,
-    //         "userFname" : req.body.UserFName,
-    //         "userLname" : req.body.UserLName,
-    //         "phoneNum" : req.body.UserPNum,
-    //         "dateOB" : req.body.UserDOB,
-    //         "userGender" : req.body.UserGender,
-    //         "dogsName" : req.body.DogsName,
-    //         "breed" : req.body.DogsBreed,
-    //         "dogsGender" : req.body.DogsGender,
-    //         "dogsAge" : req.body.DogsAge,
-    //         "vacc" : Boolean(req.body.DogsVacc),
-    //         "neut" : Boolean(req.body.DogsNeu),
-    //         "userPassword" : req.body.UserPassword,
-    //         "latitude": req.body.userLatitude,
-    //         "longitude": req.body.userLongitude
-    //     };
-    //     const Q5 = "UPDATE users SET ?";  
-    //     sql.query(Q5, UpdateCustomer,(err, mysqlres)=>{
-    //         if (err) {
-    //             console.log("error is: " + err);
-    //             res.status(400).send({message: "error in updating customer " + err});
-    //             return;
-    //         }
-    //         console.log("created new user succesfully "+ mysqlres);
-    //         res.render('homePage')
-    //         // res.send({message:"created new  succesfully "+ mysqlres});
-    //         return;
-    //     })
-    // };
-
-
-
-    // console.log(noFiltersRes);
-   
 
 module.exports = {InsertUser, ShowAllUsers,SearchUser, userSearchRes }

@@ -46,19 +46,7 @@ app.get("/homePage", (req, res) => {
     res.render("welcomePage");
 });
 
-/*
-app.get('/users', (req, res)=>{
-    sql.query("SELECT * FROM users", (err, mysqlre)=>{
-        if (err) {
-            console.log("EEERRRROORRRR: ", err);
-            res.status(404).send({message: "error in getting users"});
-            return;
-        }
-        console.log("got all users");
-        res.send(mysqlre);
-        return;
-    })});
-*/
+
 app.listen(port, ()=>{
     console.log("server is running on port " + port);
 });
